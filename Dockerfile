@@ -10,7 +10,7 @@ COPY . .
 RUN npm install
 
 # Step 5: Make port 3000 available to the world outside this container
-EXPOSE 4173
+EXPOSE 5173
 
 # Step 6: Run npm start to start the app
 CMD [ "npm", "run", "dev" ]
