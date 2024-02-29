@@ -14,4 +14,4 @@ RUN npm install
 EXPOSE 5173
 
 # Step 6: Run npm start to start the app
-CMD ["npm", "start"]
+CMD [ "npm", "run", "preview" ]
