@@ -1,6 +1,5 @@
 # Step 1: Use an official Node.js runtime as a parent image
-FROM node:14
-
+FROM node:18-alpine
 # Step 2: Set the working directory in the container
 WORKDIR /app
 
@@ -11,7 +10,7 @@ COPY . .
 RUN npm install
 
 # Step 5: Make port 3000 available to the world outside this container
-EXPOSE 5173
+EXPOSE 4173
 
 # Step 6: Run npm start to start the app
 CMD [ "npm", "run", "dev" ]
