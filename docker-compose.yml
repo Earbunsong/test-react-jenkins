@@ -1,8 +1,8 @@
 version: "3.8"
 services:
   online-shop:
-    image: front-end-online-book-shop-image
-    container_name: front-end-online-book-shop-container
+    image: test-jenkins
+    container_name: test-jenkins-container
     restart: always
     build:
       context: .
