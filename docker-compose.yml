@@ -1,14 +1,25 @@
-version: "3.4"
+# version: "3.4"
+# services:
+#  vite_docker:
+#    image: node:alpine
+#    container_name: vite_docker
+#    entrypoint: /bin/sh
+#    ports:
+#      - 8001:5173
+#    working_dir: /srv/app
+#    volumes:
+#      - type: bind
+#        source: ./
+#        target: /srv/app
+#    tty: true
+
+
+version: '3'
+
 services:
- vite_docker:
-   image: node:alpine
-   container_name: vite_docker
-   entrypoint: /bin/sh
-   ports:
-     - 8001:5173
-   working_dir: /srv/app
-   volumes:
-     - type: bind
-       source: ./
-       target: /srv/app
-   tty: true
+  react_app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8081:5173"
