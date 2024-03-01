@@ -39,20 +39,19 @@
 # CMD ["npm", "start"]
 
 
-# Use a Node.js image as the base image
-FROM node:14-alpine AS build
+FROM node:18-alpine
 
-# Set the working directory
 WORKDIR /app
 
-# Copy package.json and package-lock.json to the working directory
-COPY package*.json ./
+COPY package.json .
 
-# Install dependencies
 RUN npm install
 
-# Copy the rest of the application code
 COPY . .
+
+EXPOSE 8080
+
+CMD [ "npm", "run", "dev" ]
 
 # Build the React component
 RUN npm run build
