@@ -1,11 +1,14 @@
-version: "3.8"
+version: "3.4"
 services:
-  online-shop:
-    image: test-jenkins-vite-container
-    container_name: test-jenkins-container
-    restart: always
-    build:
-      context: .
-      dockerfile: Dockerfile
-    ports:
-      - "8081:5173"
+ vite_docker:
+   image: node:alpine
+   container_name: vite_docker
+   entrypoint: /bin/sh
+   ports:
+     - 8001:5173
+   working_dir: /srv/app
+   volumes:
+     - type: bind
+       source: ./
+       target: /srv/app
+   tty: true
